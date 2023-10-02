@@ -513,7 +513,7 @@ padding: 20px;
   font-size: 14px;
   font-weight: 500;
   border-bottom: 1px solid #e0e0e0;
-  grid-template-columns: 50px 1fr 120px 120px 120px;
+  grid-template-columns: 50px 1fr 120px 120px 120px 120px;
   font-family: var(--font-family);
 }
 .table-product-body {
@@ -525,7 +525,7 @@ padding: 20px;
   padding: 0.6rem 0;
   color: #6a727a;
   background-color: #f1f1f1;
-  grid-template-columns: 50px 1fr 120px 120px 120px;
+  grid-template-columns: 50px 1fr 120px 120px 120px 120px;
   font-family: var(--font-family);
 }
 

@@ -42,7 +42,7 @@
                   <input type="text" class="input" name="price" value="{{$product->price}}">
             </div>
           </div>
-          <div class="titlebar">
+          <div class="titlebar mt-3">
               <h1></h1>
               <input type="hidden" name="hidden_id" value="{{$product->id}}">
               <button>Save</button>

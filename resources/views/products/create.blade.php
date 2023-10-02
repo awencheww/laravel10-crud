@@ -41,7 +41,7 @@
                   <input type="text" class="input" name="price">
             </div>
           </div>
-          <div class="titlebar">
+          <div class="titlebar mt-3">
               <h1></h1>
               <button>Save</button>
           </div>

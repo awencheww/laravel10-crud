@@ -20,8 +20,6 @@ class ProductController extends Controller
         } else {
             $products = Product::latest()->paginate($perPage);
         }
-
-        // $products = Product::orderby('created_at')->get();
         return view('products.index', ['products' => $products])->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -49,7 +47,7 @@ class ProductController extends Controller
         $product->price = $request->price;
 
         $product->save();
-        return redirect()->route('products.index')->with('success', 'Products added successfully! '.$file_name);
+        return redirect()->route('products.index')->with('success', 'Products added successfully! ');
     }
 
     public function edit($id)
@@ -62,7 +60,7 @@ class ProductController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2028'
+            'image' => 'image|mimes:jpg,png,jpeg,gif,svg|max:2028'
         ]);
 
         $product = Product::findOrFail($id);
@@ -77,7 +75,7 @@ class ProductController extends Controller
         $product->price = $request->price;
 
         $product->save();
-        return redirect()->route('products.index')->with('success', 'Products has been updated successfully '.$file_name);
+        return redirect()->route('products.index')->with('success', 'Products has been updated successfully ');
     }
 
     public function destroy($id)

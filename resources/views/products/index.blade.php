@@ -56,6 +56,7 @@
               <p>Name</p>
               <p>Category</p>
               <p>Inventory</p>
+              <p>Price</p>
               <p>Actions</p>
           </div>
           <div class="table-product-body">
@@ -65,6 +66,7 @@
                   <p>{{$product->name}}</p>
                   <p>{{$product->category}}</p>
                   <p>{{$product->quantity}}</p>
+                  <p>{{$product->price}}</p>
                   <div class="d-flex align-items-center">     
                       <a href="{{route('products.edit', $product->id)}}" class="btn btn-success" style="padding:.38rem .6rem;" >
                           <i class="fas fa-pencil-alt"></i> 
@@ -79,7 +81,7 @@
                   </div>
                 @endforeach
             @else
-                  <p class="text-center">Product not found.</p>
+                  <p class="text-center w-100">Product not found.</p>
             @endif
           </div>
           <div class="table-paginate">
