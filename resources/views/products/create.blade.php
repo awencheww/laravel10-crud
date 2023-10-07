@@ -43,7 +43,7 @@
           </div>
           <div class="titlebar mt-3">
               <h1></h1>
-              <button>Save</button>
+              <button type="submit">Save</button>
           </div>
         </form>
       </section>

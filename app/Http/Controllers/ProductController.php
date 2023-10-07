@@ -23,6 +23,7 @@ class ProductController extends Controller
         return view('products.index', ['products' => $products])->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
+    //Add product view
     public function create()
     {
         return view('products.create');
@@ -64,12 +65,13 @@ class ProductController extends Controller
         ]);
 
         $product = Product::findOrFail($id);
-        $file_name = $request->file('image')->getClientOriginalName();
-        request()->image->move(public_path('images'), $file_name);
-
+        if($request->file('image') !== null) {
+            $file_name = $request->file('image')->getClientOriginalName();
+            request()->image->move(public_path('images'), $file_name);
+            $product->image = $file_name;
+        }
         $product->name = $request->name;
         $product->description = $request->description;
-        $product->image = $file_name;
         $product->category = $request->category;
         $product->quantity = $request->quantity;
         $product->price = $request->price;

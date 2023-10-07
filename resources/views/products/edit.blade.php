@@ -24,14 +24,14 @@
                 <label>Description (optional)</label>
                 <textarea cols="10" rows="5" name="description">{{$product->description}}</textarea>
                 <label>Add Image</label>
-                <img id="file-preview" src="{{asset('images/' .$product->image)}}" alt="" class="img-product" />
+                <img id="file-preview" src="{{asset('images/' .$product->image)}}" name="product-image" alt="" class="img-product" />
                 <input type="file" name="image" accept="image/*" onchange="showFile(event)">
             </div>
             <div>
                   <label>Category</label>
                   <select  name="category">
                     @foreach (json_decode('{"Cake":"Cake", "Cupcake":"Cupcake", "Drinks":"Drinks", "Dessert":"Dessert", "Sweets":"Sweets"}', true) as $optionKey => $optionValue)
-                      <option value="{{$optionKey}}">{{$optionValue}}</option>
+                      <option value="{{$optionKey}}" {{ ($optionKey==$product->category) ? 'selected' : ''; }}>{{$optionValue}}</option>
                     @endforeach
                   </select>
                   <hr>
@@ -45,7 +45,7 @@
           <div class="titlebar mt-3">
               <h1></h1>
               <input type="hidden" name="hidden_id" value="{{$product->id}}">
-              <button>Save</button>
+              <button type="submit">Save</button>
           </div>
         </form>
       </section>
